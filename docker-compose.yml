@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  docker:
+    container_name: wordbazaar.superhero.com
+    restart: always
+    image: nginx
+    expose:
+      - 80
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    environment:
+      - VIRTUAL_HOST=wordbazaar.superhero.com,www.wordbazaar.superhero.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

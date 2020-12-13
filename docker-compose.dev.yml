@@ -1,0 +1,9 @@
+version: '3.6'
+
+services:
+  docker:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./dist:/usr/share/nginx/html
